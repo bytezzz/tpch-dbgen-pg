@@ -125,3 +125,12 @@ int rowcnt;
 extern int rowcnt_dflt[];
 extern int rowcnt;
 #endif
+
+#ifdef POSTGRESQL
+#define GEN_QUERY_PLAN  "EXPLAIN"
+#define START_TRAN      "BEGIN TRANSACTION"
+#define END_TRAN        "COMMIT;"
+#define SET_OUTPUT      ""
+#define SET_ROWCOUNT    "LIMIT %d\n"
+#define SET_DBASE       ""
+#endif
